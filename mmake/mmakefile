@@ -1,0 +1,8 @@
+mexec.o: mexec.c readcommands.h
+	gcc -g -std=gnu11 -Werror -Wall -Wextra -Wpedantic -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -c mexec.c
+
+parse.o: readcommands.c readcommands.h
+	gcc -g -std=gnu11 -Werror -Wall -Wextra -Wpedantic -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -c parse.c
+
+mexec: mexec.o readcommands.o
+	gcc -g -std=gnu11 -Werror -Wall -Wextra -Wpedantic -Wmissing-declarations -Wmissing-prototypes -Wold-style-definition -o mexec mexec.o parse.o
